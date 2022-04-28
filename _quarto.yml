@@ -1,0 +1,38 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Guide d'identification des organismes mésozooplanctoniques de la Mer Ligurienne"
+  repo-url: "https://github.com/EcoNum/zooimage_mesozooplankton_guide2"
+  cover-image: "EcoNum-logo.png"
+  page-navigation: true
+  author:
+    - name: "Rémy Dugauquier"
+      affiliation: "Service d'écologie numérique, Université de Mons, Belgique"
+      affiliation-url: "https://github.com/EcoNum"
+    - name: "Guyliann Engels"
+      url: "https://github.com/GuyliannEngels"
+      affiliation: "Service d'écologie numérique, Université de Mons, Belgique"
+      affiliation-url: "https://github.com/EcoNum"
+    - name: "Philippe Grosjean"
+      affiliation: "Service d'écologie numérique, Université de Mons, Belgique"
+      affiliation-url: "https://github.com/EcoNum"
+  date: "4/27/2022"
+  chapters:
+    - index.qmd
+    - cnidaria.qmd
+    - references.qmd
+
+lang: fr
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+
