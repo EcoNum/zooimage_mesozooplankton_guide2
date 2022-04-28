@@ -41,7 +41,7 @@ Trois ordres de Scyphozoa sont donc considérés :
 
 Il serait intéressant de pouvoir distinguer les larves éphyras de ces 3 ordres de Scyphozoa. Malheureusement il s'avère que la littérature est assez pauvre quant à l'étude du cycle de vie des schyphozoaires, en particulier sur les stades pélagiques. De plus au vue des grandes similarités morphologiques entre les stades éphyras des différentes espèces, l'identification sur base de ce stade est difficile [@tronolone2002]. La difficulté sur base de la morphologie pour ces larves est accrue du fait qu'elles soient encore en développement et que la morphologie est encore sujette à de nombreux changements, les organismes Pelagia voient par exemple leurs nombres de filaments gastriques passer de 4 à 8 en 76 jours [@tronolone2002]. Les éphyras fraîchement libérées sont extrêmement semblables et de ce fait difficilement discernables [@conway2012].
 
-Après l'analyse des vignettes, il s'avère qu'aucune Coronatae n'a été identifiée. La distinction entre les Semaeostomeae et les Rizostomeae se base principalement sur la morphologie des canaux radiaux et adriaticaux. Cela rajoute une difficulté car il faut que l'organisme soit bien disposé pour bien identifier ces morphologies.
+La distinction entre les Semaeostomeae et les Rizostomeae se base principalement sur la morphologie des canaux radiaux et adriaticaux. Cela rajoute une difficulté car il faut que l'organisme soit bien disposé pour bien identifier ces morphologies.
 
 -   Les **Semaeostomeae** : les méduses adultes de cet ordre font de 10 à 30 cm en moyenne et sont constituées de 4 bras. Les larves ephyra possède une structure des conaux radiaux et adriaticaux particulier (@fig-semaeostomaeae). Cet ordre comprend plus de 50 espèces avec entre autre, *Aurelia aurita* [@ruppert2004]
 
@@ -66,3 +66,150 @@ La @fig-vigrhizostomeae propose des vignettes supplémentaires.
 #| fig-cap: "Vignettes des Rhizostomeae."
 plot_vignettes(vigns, group = "rhizostomeae")
 ```
+
+\- Les **Coronatae** : après l'analyse des vignettes, il s'avère qu'aucune Coronatae n'a été identifiée. Cet ordre comprend 30 espèces, dont Conulata. C'est l'ordre le plus primitif des Scyphozoa.
+
+## Hydrozoa
+
+Les organismes de la classe Hydrozoa ont un cycle de vie comprenant le stade polype (majoritaire) et le stade méduse. Cette classe est la plus diversifiée des cnidaires et comprend à la fois des individus marins et dulçaquicoles [@bouillon2006]. Les méduses de cette classe sont de plus petites tailles que chez les Scyphozoa et vivent généralement en banc [@ruppert2004].
+
+Les différents ordres d'Hydrozoa et leurs positions phylogénétiques sont encore fortement débattus. Le set d'apprentissage utilisé par @fullgrabe2020 s'était concentré sur 2 ordres en particulier, les Siphonophorae et les Hydromedusa. Malheureusement ce set d'apprentissage doit être revu, la classification ayant changé depuis. Ce travail se basera sur une classification plus moderne des Cnidaires, celle basée sur @kayal2018.
+
+Les Hydrozoa sont constitués de 6 ordres ( @fig-cnidariaphylo ). Il est judicieux dans un premier temps de répartir ces 6 ordres dans 2 groupes distincts ( @tbl-meduse ). La séparation des deux groupes se base sur la distinction entre la sous-classe des Trachylinae et la sous-classe des Hydroidilina [@bentlage2018; @kayal2018; @conway2012].
+
+```{r}
+#| label: tbl-meduse
+#| tbl-cap: "Répartition des 6 ordres d'Hydrozoa en 2 groupes : Trachylinae et Hydroidolina."
+knitr::kable(
+  tibble::tibble(
+    "Trachylinae" = c("Limnomedusae","Narcomedusae"," "," "),
+    "Hydroidolina" = c("Siphonophorae","Aplanulata", "Leptothecata", "Filifera")
+    )
+  )
+```
+
+Il est très difficile d'établir une phylogénie correcte des Hydrozoa tant ce groupe est actuellement en plein remaniement. Ainsi, les Trachylinae comportent tantôt 2 ordres (Limnomedusae et Narcomedusae), tantôt 3 ordres (Limnomedusae, Narcomedusae et Trachymedusae). Néanmoins, une tendance semble de plus en plus considérer les Trachymedusae comme étant très proches des Narcomedusae [@collins2008].
+
+### Trachylinae
+
+Les Trachylinae sont une sous-classe d'Hydrozoa comportant les Limnomedusae et les Narcomedusae [@kayal2018] . Ces organismes se distinguent par \[@ruppert2004\] :
+
+-    des statolithes endodermiques
+
+-    un stade polype réduit voir absent
+
+-    des bulbes tentaculaires remplis d'endoderme
+
+Les Limnomedusae sont des méduses en forme de cloche, avec des tentacules sans véritables bulbes basaux trouvées principalement en mer ouverte. Quant aux Narcomedusae, ce sont des méduses avec une exombrelle divisée par des rainures, avec des tentacules dépourvues de bulbes et se trouvant principalement en mer ouverte [@conway2012].
+
+Bien que ces organismes soient difficilement identifiables, certains clades se reconnaissent facilement, comme par exemple les Rhopalonematidae
+
+![Vignette (A) et photographie (B) [@hecq2014] de Rhopalonemetidae](images/cnidaria/rhopalonematidae.png)
+
+La @fig-vigrhopalonemetidae propose des vignettes supplémentaires.
+
+```{r}
+#| label: fig-vigrhopalonemetidae
+#| fig-cap: "Vignettes des Rhopalonemetidae."
+plot_vignettes(vigns, "rhopalonematidae")
+```
+
+### Hydroidolina
+
+Les Hydroidolina sont des organismes possédant un cycle de vie passant par le stade polype et méduse. Les différents ordres de cette sous-classe se différencient principalement par la structure du polype, non échantillonné à Calvi. De ce fait, il sera extrêmement difficile d'aller plus loin dans la taxonomie.
+
+#### Siphonophorae
+
+Comme expliqué précédemment, pour rester cohérent avec les études de @fullgrabe2020, @quivythomas2018 , un accent sera porté sur les siphonophores. Le siphonophore est un super-organisme constitué d'une colonie de plus petits individus appelés zoïdes [@ruppert2004]. En fonction de leurs rôles au sein de la colonie, le zoïdes portent des noms différents ( @tbl-zoide ). Généralement les siphonophores s'abîment lors d'une capture avec un filet à plancton, il est donc très difficile d'estimer le nombre d'individus d'un échantillon via un trait de plancton.
+
+```{r}
+#| label: tbl-zoide
+#| tbl-cap: "Différents types de zoïdes et les fonctions associées."
+knitr::kable(
+  tibble::tibble(
+  "Zoïdes" = c("Gonozoïde","Dactylozoïde","Gastrozoïde","Pneumatophore","Nectophore"), 
+  "Fonctions" = c("Reproduction","Défense","Digestion","Flottaison","Locomotion")
+    )
+  )
+```
+
+La morphologie des nectophores est très utilisée en taxonomie car même si l'individu se dégrade lors de la capture avec un filet, la morphologie de base du nectophore est relativement bien conservée. Les nectophores sont les zoïdes formant le nectosome, partie supérieur du super-organisme, et permettant la locomotion. Les nectophores sont des organismes génétiquement identiques ayant une morphologie en forme de cloche ( @costello2015 ) Au centre de l'organisme, un nectosac est visible, ce dernier étant relié à un canal pédiculaire @fig-nectophore.
+
+![Schéma de la vue supérieure (A) et inférieure (B) d'un jeune nectophore de Marrus Claudanielis. Aw -- aile axiale, F -- battant, N -- nectosac, Pac -- canal ascendant palléal, Pedc -- canal pédiculaire, Ral -- pont apico-latéral, Ril1 et Ril2 -- pont infra-latéral, Rl -- pont latéral, échelle de 2 mm . Image provenant de @dunn2005.](images/cnidaria/nectophore.png){#fig-nectophore}
+
+L'ordre de Siphonophorae est constitué de différents sous-ordres :
+
+-   Cystonectae
+
+-   Calycophorae
+
+-   Physonectae
+
+Etant donné que les Cystonectae ne possèdent pas de nectophore, ceux-ci ne sont pas considérés dans ce guide. En effet, les Cystonectae sont constitués d'un pneumatophore volumineux et d'un siphosome constitué de gastrozoïdes [@bardi2007] .
+
+La précédente étude de @fullgrabe2020 avait établi un set d'apprentissage distinguant les Calycophorae et les Physonectae, en distinguant également une famille de Calycophorae les Abylidae.
+
+Au vu des organismes étudiés, l'identification peut poser problème. Tout d'abord de part le fait que ce sont des organismes relativement mous et qu'ils peuvent mal se positionner et s'écraser en un nombre important de formes différentes. Ensuite, les nectophores sont de morphologies très variables en fonction de leurs stades de développement . Enfin, les Physonectae ont été peu décrits et une espèce en particulier revient dans la majorité des études, *Erenna richardii* [@pugh2016]. Le fait que quasiment une seule espèce est étudiée peut biaiser les résultats et les critères taxonomiques.
+
+##### Calycophorae
+
+Ce sous-ordre est le plus étudié et décrit des siphonophores, ces organismes ne possèdent pas de pneumatophores, ils ont également un nombre réduit de nectophores \[@pugh2018\]. Selon l'étude de @pugh2018 ce sous ordre est divisé en deux groupes, contenant l'ensemble des familles, le groupe des priomorphes (nectophores arrondis) et le groupe des diphyomorphes (nectophores triangulaires) ( @tbl-calycophorae )
+
+```{r}
+#| label: tbl-calycophorae
+#| tbl-cap: "Représentation des 7 familles de Calycophorae réparties en deux groupes. Il est a noter que les tottonophyidae se trouvent dans les 2 groupes car ils combinent l’ensemble des caractéristiques."
+knitr::kable(
+  tibble::tibble(
+  "Priomorphe" = c("Hippopodiidae","Prayidae","Tottonophyidae","Pneumatophore"," "), 
+  "Diphyomorphe" = c("Abylidae","Clausophyidae","Diphyidae","Sphaeronectidae","Tottonophyidae")
+    )
+  )
+```
+
+L'analyse des vignettes permettent de faire ressortir uniquement les calycophores diphyomorphes, de 2 familles distinguables, les Abylidae et les Diphyidae.
+
+Les Abylidae @fig-abylidae possèdent de petits nectophores prismatiques à pyramidaux dont la partie antérieure est souvent longue et pointue.
+
+![Vignette et photographie [@pagès2006] d'abylidae](images/cnidaria/abylidae.png){#fig-abylidae}
+
+La @fig-vigabylidae propose des vignettes supplémentaires.
+
+```{r}
+#| label: fig-vigabylidae
+#| fig-cap: "Vignettes des Abylidae."
+plot_vignettes(vigns, "abylidae")
+```
+
+Les Diphyidae ( @fig-diphyidae) possèdent des nectophores en formes de longues pyramides remplient souvent d'un long nectosac [@nishiyama2016].
+
+![Photographie [@pagès2006] et vignette de Diphyidae](images/cnidaria/diphyidae.png){#fig-diphyidae}
+
+La @fig-vigdiphyidae propose des vignettes supplémentaires.
+
+```{r}
+#| label: fig-vigdiphyidae
+#| fig-cap: "Vignettes des Diphyidae."
+plot_vignettes(vigns, "diphyidae")
+```
+
+##### Physonectae
+
+Ces organismes sont constitués d'un pneumatophore, contrairement aux Calycophore ( @fig-physonectae ). Les nectophores forment ici une couronne à la base de la colonie, ils ont l'apparence de sacs dépourvus de crêtes et de stries [@pugh1983]. Ce sous-ordre est actuellement constitué de près de 10 familles mais il est très difficile de les distinguer. Certaines études écartent les Agalmatidae du reste des familles mais les connaissances ne sont pas encore assez poussée que pour aller plus loin dans la taxonomie [@pugh2006] .
+
+![Photographie et vignette des physonectae](images/cnidaria/physonectae.png){#fig-physonectae}
+
+La @fig-vigphysonectea propose des vignettes supplémentaires.
+
+```{r}
+#| label: fig-vigphysonectea
+#| fig-cap: "Vignettes des Physonectae."
+plot_vignettes(vigns, "physonectae")
+```
+
+## Cubozoa
+
+La classe des Cubozoa rassemblent des méduses de forme cubique caractéristiques, la plupart du temps transparentes et possédant une forte concentration en nématocystes [@ruppert2004]. Aucun cubozoa n'a été identifié dans cette étude, principalement car ces organismes se concentrent dans les zones chaudes et tropicales du globe [@bentlage2018]. Certaines espèces de cubozoa sont tout de même recensées en méditerranée, causant notamment des blooms important au printemps [@gueroun2015].
+
+## Staurozoa
+
+Les Staurozoa ne sont pas discuté dans ce guite. Tout simplement car ces organismes sont une classe de Cnidaire restant fixés toute leur vie et ne passant jamais par le stade pélagique [@ruppert2004].
