@@ -15,7 +15,7 @@ Les chaetognathes sont un phylum de protostomiens marins. Etant les principaux p
 
 -   Une queue
 
-Ce phylum contient la classe des Sagittoidea divisée en 2 ordres :
+Ce phylum contient la classe des Sagittoidea divisée en 2 ordres [@horton2022] :
 
 -   Aphragmophora (5 familles)
 

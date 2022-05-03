@@ -1,0 +1,92 @@
+# Tunicata
+
+```{r, echo=FALSE}
+source("R/init.R")
+vigns <- fs::dir_ls(
+  here::here(training_dir, "biota/animalia/chordata/tunicata"), 
+  type = "file", glob = "*.png", recurse = TRUE)
+```
+
+Les tuniciers constituent un sous-phylum des Chordés divisés en trois classes. Ces organismes tirent leur noms de la tunique, produite par l'épiderme, les recouvrant. Ils possèdent un pharynx ouvert vers l'extérieur mais les organismes adultes sont dépourvus d'une notochorde. En plus de la tunique caractéristique, ces organismes possèdent un stade larvaire particulier qui possède une notochorde [@ruppert2004].
+
+Les trois classes de tuniciers sont les Appendicularia, les Ascidiaceaet les Thaliacea [@horton2022].
+
+## Ascidiacea
+
+Aucun organisme adulte de cette classe n'est retrouvé dans l'échantillonnage étant donné que ce sont des organismes benthiques filtreurs fixés au substrat. Par contre la larve de ces organismes est pélagique, composée d'une tête et d'une queue. C'est cette queue qui contient la notochorde, disparaissant chez l'adulte fixé [@ruppert2004].
+
+Ces larves pourraient apparaître occasionnellement dans nos vignettes, mais elles restent toujours rares.
+
+## Appendicularia
+
+Les appendiculaires sont des tuniciers pélagiques. Ils ont la particularité, par rapport aux autres tuniciers de conserver la queue à l'état adulte, queue qui leur sert d'organe locomoteur. Cette classe d'organisme est parfois également appelée Larvaceae. Ce sont des organismes souvent échantillonnés parmi le plancton marin [@ruppert2004]. Au vue de leur morphologie néoténique, ils sont facilement identifiables. Dans cette étude la taxonomie sera affinée pour essayer de distinguer les différentes familles d'appendiculaires : Fritillariidae, Kowalevskiidae et Oikopleuridae [@horton2022].
+
+### Frittillariidae
+
+Cette famille ( @fig-fritillariidae ) est constituée de deux sous-familles différentes, les Appendiculariinae (un seul genre) et les Fritillariinae (trois genres).
+
+![Vignette (A) et image (B) de Fritillariidae [@hecq2014].](images/tunicata/frittillariidae.png){#fig-fritillariidae width="250"}
+
+La @fig-vig-fritillariidae propose des vignettes supplémentaires.
+
+```{r}
+#| label: fig-vig-fritillariidae
+#| fig-cap: "Vignettes des Fritillariidae."
+plot_vignettes(vigns, group = "fritillariidae")
+```
+
+### Oikopleuridae 
+
+Cette famille ( @fig-oikopleuridae ) d'appendiculaire est constituée de deux sous-familles, les Bathochrodaeinae (deux genres) et les Oikopleurinae (dix genres). Ils ont un corps ovoïde avec deux ouvertures branchiales reliant la cavité pharyngée [@aravena2002].
+
+![Vignette (A) et image (B) de Oikopleuridae [@hecq2014].](images/tunicata/oikopleuridae.png){#fig-oikopleuridae width="250"}
+
+La @fig-vig-oikopleuridae propose des vignettes supplémentaires.
+
+```{r}
+#| label: fig-vig-oikopleuridae
+#| fig-cap: "Vignettes des Oikopleuridae."
+plot_vignettes(vigns, group = "oikopleuridae")
+```
+
+### Kowalevskiidae
+
+Ces organismes possèdent un tronc court avec une dépression de la partie antérieure et sans endostyle [@aravena2002]. Aucun de ces organismes ne se retrouvent dans les vignettes du set d'apprentissage.
+
+La littérature portant sur les caractères morphologiques des appendiculaires est peu fournie, il est donc difficile d'établir une liste précise des critères morphologiques distinctifs de ces organismes. De plus les appendiculaires sont très fragiles et il arrive souvent de trouver les queues séparées du reste de l'organisme, c'est pour cela qu'une classe du set d'apprentissage est consacrée aux queues détachées d'appendiculaires.
+
+## Thaliacea
+
+Les Thaliacées sont également des tuniciers pélagiques à l'état adulte, vivant séparés ou en colonies. Leur anatomie rappelle fortement celle des Ascidiaceae, en forme de sac filtreur. Ces organismes ont un cycle de vie complexe, alternant larve solitaire et phase coloniale. Cette classe est constituée de trois ordres différents qui seront étudiés ci-dessous [@ruppert2004].
+
+### Doliolida
+
+Les dolioles ( @fig-dolioles ) ne possèdent pas de cavités péribranchiales et possèdent quatre fentes branchiales. Les blastozoïdes (individus) sont divisés en gonozoïdes (fonction reproductrice), phorozoïdes (fonction locomoteur) et tropozoïdes (fonction nutritive).
+
+![Vignette (A) et image (B) de blastozoïde de dolioles [@caicci2013].](images/tunicata/doliolida.png){#fig-dolioles width="250"}
+
+La @fig-vig-doliolida propose des vignettes supplémentaires.
+
+```{r}
+#| label: fig-vig-doliolida
+#| fig-cap: "Vignettes des Doliolida."
+plot_vignettes(vigns, group = "doliolida")
+```
+
+### Pyrosomatida 
+
+Les pyrosomes font partie de l'ordre des Pyrosomatida. Les pyrosomes peuvent former de grandes colonies tubulaires de plusieurs mètres et sont connus pour leur bioluminescence. Ils sont constitués de milliers de blastozoïdes dont la tunique est fusionnée et le siphon buccal s'ouvre au centre du tube [@caicci2013]. Aucun pyrosome ne se retrouve dans nos vignettes.
+
+### Salpida
+
+Tout comme les dolioles, les salpes ( @fig-salpida ) ne possèdent pas de cavité péribranchiale. Les individus solitaires peuvent atteindre 8\\ cm de longueur et les colonies plusieurs dizaines de mètres [@caicci2013].
+
+![Vignette (A) et Image de Salpida](images/tunicata/salpida.png){#fig-salpida width="250"}
+
+La @fig-vig-salpida propose des vignettes supplémentaires.
+
+```{r}
+#| label: fig-vig-salpida
+#| fig-cap: "Vignettes des Salpida."
+plot_vignettes(vigns, group = "salpida")
+```

@@ -23,6 +23,7 @@ book:
     - index.qmd
     - cnidaria.qmd
     - chaetognatha.qmd
+    - tunicata.qmd
     - references.qmd
 
 lang: fr
