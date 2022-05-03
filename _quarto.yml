@@ -22,6 +22,7 @@ book:
   chapters:
     - index.qmd
     - cnidaria.qmd
+    - chaetognatha.qmd
     - references.qmd
 
 lang: fr

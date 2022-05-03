@@ -33,7 +33,7 @@ plot_vignettes <- function(paths, group = NULL, nx = 3, ny = 3, main = NULL, see
     paths <- stringr::str_subset(string = paths, pattern = group)
   }
 
-  set.seed(43)
+  set.seed(seed)
   vigs_max <- length(paths)
 
   if(vigs_max < (nx*ny)) {

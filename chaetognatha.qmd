@@ -1,0 +1,78 @@
+# Chaetognatha
+
+```{r, echo=FALSE}
+source("R/init.R")
+vigns <- fs::dir_ls(
+  here::here(training_dir, "biota/animalia/chaetognatha"), 
+  type = "file", glob = "*.png", recurse = TRUE)
+```
+
+Les chaetognathes sont un phylum de protostomiens marins. Etant les principaux prédateurs de copépodes, ils ont un rôle écologique majeur dans les écosystèmes marins planctoniques. Ils jouent de ce fait un rôle important dans le transfert d'énergie depuis les copépodes vers les plus hauts niveaux trophiques, ils sont de plus les seconds organismes les plus abondants du zooplancton [@lee2016]. Ce sont des organismes vermiformes dont le corps est divisé en 3 segments [@quivythomas2018] :
+
+-   Une tête portant des crochets caractéristiques de ces organismes
+
+-   Un tronc
+
+-   Une queue
+
+Ce phylum contient la classe des Sagittoidea divisée en 2 ordres :
+
+-   Aphragmophora (5 familles)
+
+-   Phragmophora (4 familles)
+
+La littérature est assez pauvre quant aux caractères morphologiques permettant de distinguer les différentes familles de chaetognathes. La distinction se fait essentiellement à partir de différentes clés permettant de différencier les formes générales des différents segments des organismes.
+
+Le principal critère de classification des chaetognathes est la position des nageoires ou ailerons. Malheureusement, il n'est pas possible de l'utiliser pour les vignettes car le traitement les a supprimés. L'identification des chaetognathes est donc préférables in vivo.
+
+## Aphragmophora
+
+L'ordre des Aphragmophora est caractérisé par l'absence de musculature transverse et peu de structures glandulaires sur la surface du corps [@papillon2006]. Deux familles sont identifiées dans les vignettes. Il s'agit des Krohnittidae et des Sagittidae.
+
+### Krohnittidae
+
+La famille des Krohnittidae ( @fig-krohnittidae ) est caractérisée par une armature céphalique spécialisée avec crochets incurvés et dents lancéolées et une seule paire de nageoire latérale [@papillon2006].
+
+![Vignette (A) et dessin (B) de Krohnittidae [@gasmi2014].](images/chaetognatha/krohnittidae.png){#fig-krohnittidae width="250"}
+
+La @fig-vig-krohnittidae propose des vignettes supplémentaires.
+
+```{r}
+#| label: fig-vig-krohnittidae
+#| fig-cap: "Vignettes des Krohnittidae."
+plot_vignettes(vigns, group = "krohnittidae")
+```
+
+### Sagittidae
+
+La famille des Sagittidae (@fig-sagittidae) représente plus de 75% des chaetognathes. Elle est caractérisée par 2 paires de nageoires latérales, 2 sets de dents paires antérieures et postérieurs et un couronne de cils très allongés [@papillon2006].
+
+![Vignette (A) et dessin (B) de Sagittidae [@gasmi2014].](images/chaetognatha/sagittidae.png){#fig-sagittidae width="250"}
+
+La @fig-vig-sagittidae propose des vignettes supplémentaires.
+
+```{r}
+#| label: fig-vig-sagittidae
+#| fig-cap: "Vignettes des Sagittidae."
+plot_vignettes(vigns, group = "sagittidae")
+```
+
+## Phragmophora
+
+Les Phragmophora sont caractérisés par la présence d'une musculature transverse appélée phragme et la présence de structures glandulaires sur la surface du corps [@papillon2006].
+
+Une seule famille de phragmophora est identifiée dans les vignettes, il s'agit de la famille des Eukrohniidae.
+
+### Eukrohniidae
+
+La famille des Eukrohniidae ( @fig-Eukrohniidae ) est caractérisé par un segment de queue assez court, une paire de nageoires latérales ou de structures gélatineuses et des diverticules stomacaux généralement absents [@lee2016].
+
+![Vignette (A) et dessin (B) de Eukrohniidae [@gasmi2014].](images/chaetognatha/eukrohniidae.png){#fig-Eukrohniidae width="250"}
+
+La @fig-vig-eukrohniidae propose des vignettes supplémentaires.
+
+```{r}
+#| label: fig-vig-eukrohniidae
+#| fig-cap: "Vignettes des Eukrohniidae."
+plot_vignettes(vigns, group = "eukrohniidae")
+```

@@ -94,11 +94,11 @@ Il est très difficile d'établir une phylogénie correcte des Hydrozoa tant ce 
 
 Les Trachylinae sont une sous-classe d'Hydrozoa comportant les Limnomedusae et les Narcomedusae [@kayal2018] . Ces organismes se distinguent par \[@ruppert2004\] :
 
--    des statolithes endodermiques
+-   des statolithes endodermiques
 
--    un stade polype réduit voir absent
+-   un stade polype réduit voir absent
 
--    des bulbes tentaculaires remplis d'endoderme
+-   des bulbes tentaculaires remplis d'endoderme
 
 Les Limnomedusae sont des méduses en forme de cloche, avec des tentacules sans véritables bulbes basaux trouvées principalement en mer ouverte. Quant aux Narcomedusae, ce sont des méduses avec une exombrelle divisée par des rainures, avec des tentacules dépourvues de bulbes et se trouvant principalement en mer ouverte [@conway2012].
 
