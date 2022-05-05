@@ -35,7 +35,7 @@ La @fig-vig-fritillariidae propose des vignettes supplémentaires.
 plot_vignettes(vigns, group = "fritillariidae")
 ```
 
-### Oikopleuridae 
+### Oikopleuridae
 
 Cette famille ( @fig-oikopleuridae ) d'appendiculaire est constituée de deux sous-familles, les Bathochrodaeinae (deux genres) et les Oikopleurinae (dix genres). Ils ont un corps ovoïde avec deux ouvertures branchiales reliant la cavité pharyngée [@aravena2002].
 
@@ -73,7 +73,7 @@ La @fig-vig-doliolida propose des vignettes supplémentaires.
 plot_vignettes(vigns, group = "doliolida")
 ```
 
-### Pyrosomatida 
+### Pyrosomatida
 
 Les pyrosomes font partie de l'ordre des Pyrosomatida. Les pyrosomes peuvent former de grandes colonies tubulaires de plusieurs mètres et sont connus pour leur bioluminescence. Ils sont constitués de milliers de blastozoïdes dont la tunique est fusionnée et le siphon buccal s'ouvre au centre du tube [@caicci2013]. Aucun pyrosome ne se retrouve dans nos vignettes.
 

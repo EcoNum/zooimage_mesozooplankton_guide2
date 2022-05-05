@@ -1,0 +1,82 @@
+# Mollusca
+
+```{r, echo=FALSE}
+source("R/init.R")
+vigns <- fs::dir_ls(
+  here::here(training_dir, "biota/animalia/mollusca"), 
+  type = "file", glob = "*.png", recurse = TRUE)
+```
+
+Le phylum des mollusques est sans doute l'embranchement d'invertébrés le plus connu du grand public. Ce phylum comprend un très grand nombre d'organismes différents, mais ayant tous des caractéristiques morphologiques communes [@ruppert2004].
+
+-   Symétrie bilatérale
+
+-    La surface ventrale musculeuse est appelée le pied
+
+-   La surface dorsale est généralement couverte d'une coquille protégeant la masse viscérale. Cette coquille est sécrétée par le manteau, un revêtement épidermique
+
+-    ...
+
+Ce phylum contient différentes classes telles que les Bivalvia, Caudofoveata, Gastropoda, Scaphopoda,... [@horton2022]
+
+Les études précédentes dont @quivythomas2018 ont identifié 2 genres faisant partie de la classe des Gastropoda, les Creseis et Cavolinia. Après analyse il apparaît que cette classification est erronée. En effet l'ordre des Cavolinia a été confondu avec celui des Clio faisant partie de la même famille des Cavoliniidae. Les Creseis eux ont bien été identifiés mais la classification est affinée dans cette étude.
+
+Les Gastropoda sont donc une classe de mollusques possédant une masse viscérale torsadée recouverte généralement d'une coquille univalve dorsale. On retrouve des individus marins, dulçaquicoles et terrestres [@janssen2012].
+
+## Creseis
+
+Ce genre de mollusque fait partie de la famille des Creseidae et de l'ordre des Pteropoda [@horton2022]. Ce sont des organismes planctonivores capturant leurs proies à l'aide de mucus. Ils possèdent une coquille caractéristique pointue ainsi qu'une paire d'organe servant à la natation sur la partie supérieure [@lalli1989].
+
+La classification de ce genre a été établie de part la morphologie de la coquille, caractéristique facilement utilisable lors de l'analyse de vignette, mais cette classification a longtemps été débattue. Les dernières études génomiques ont permi de vérifier certains taxons établis par la taxonomie mais en ont également remis d'autres en cause [@gasca2014]. Les différentes vignettes seront classées en fonction des principales espèces dont la taxonomie a été vérifiée récemment par génomique.
+
+Les vignettes ont permis d'identifier 4 espèces ( @fig-creseis ) : *Creseis clava* ( @fig-creseis-clava ), *Creseis virgula* ( @fig-creseis-virgula ), *Creseis conica* et *Creseis chierchiae* ( @fig-creseis-conica ) . Les deux dernières étant très proches morphologiquement elles sont rassemblées dans la même classe du set d'apprentissage.
+
+::: {#fig-creseis layout-ncol="3"}
+![Creseis clava](images/mollusca/clava.png){#fig-creseis-clava width="229"}
+
+![Creseis virgula](images/mollusca/virgula.png){#fig-creseis-virgula width="247"}
+
+![Creseis conica/cherchia](images/mollusca/conica.png){#fig-creseis-conica width="205"}
+
+Vignettes et images de *C. clava*, *C. virgula*, *C.conica* [@gasca2014]
+:::
+
+La @fig-vig-clava propose des vignettes supplémentaires de *C. clava*.
+
+```{r}
+#| label: fig-vig-clava
+#| fig-cap: "Vignettes des *C. clava*. "
+plot_vignettes(vigns, group = "creseis_clava", nx = 2 )
+```
+
+La @fig-vig-virgula propose des vignettes supplémentaires de *C. virgula*.
+
+```{r}
+#| label: fig-vig-virgula
+#| fig-cap: "Vignettes de *Creseis virgula* ."
+plot_vignettes(vigns, group = "creseis_virgula")
+```
+
+La @fig-vig-conica propose des vignettes supplémentaires des *C. conica* et *C. chierchiae*.
+
+```{r}
+#| label: fig-vig-conica
+#| fig-cap: "Vignettes de *Creseis conica* et *Creseis chierchiae* ."
+plot_vignettes(vigns, group = "creseis_conica_chierchiae")
+```
+
+## Clio
+
+Le genre Cavolinia est un genre de mollusque faisant partie de la famille des Cavoliniidae et du même ordre que Creseis, c'est-à-dire les Pteropoda [@horton2022]. La morphologie est assez semblable entre le genre *Clio* et le genre *Creseis*, mais la position de l'épine caudale et la forme générale du corps permettent de les distinguer [@janssen2012].
+
+Le genre *Clio* comprend plus de 80 espèces et il n'est pas possible simplement avec les vignettes de les distinguer.
+
+![Vignette (A) et image (B) de Pteropoda du genre Clio [@hecq2014].](images/mollusca/clio.png){#fig-clio width="250"}
+
+La @fig-vig-clio propose des vignettes supplémentaires.
+
+```{r}
+#| label: fig-vig-clio
+#| fig-cap: "Vignettes des Clio."
+plot_vignettes(vigns, group = "clio")
+```
