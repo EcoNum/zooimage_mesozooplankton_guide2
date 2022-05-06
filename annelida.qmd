@@ -1,0 +1,38 @@
+# Annelida
+
+```{r, echo = FALSE}
+source("R/init.R")
+vigns <- fs::dir_ls(
+  here::here(training_dir, "biota/animalia/annelida"), 
+  type = "file", glob = "*.png", recurse = TRUE)
+```
+
+Les annélides constituent un phylum d'organismes vermiformes segmentés. Il existe énormément d'espèces soit marines, soit d'eau douce, soit terrestres. Ils sont de morphologies très variées pour des tailles allant de quelques millimètres à plus de 3 mètres. Ce qui fait la principale caractéristique de ce phylum est le corps vermiforme et métamérisé en plusieurs segments selon un axe longitudinal. La partie segmentée du corps est néanmoins toujours limitée au tronc de l'organisme [@ruppert2004].
+
+Ce phylum est divisé en 3 classes :
+
+-   Polychaetes
+-   Oligochaetes
+-   Achaetes
+
+Les études précendente dont [@quivythomas2018] avait rassemblé toutes une série de vignettes d'annélides, malheureusement il n'est pas possible d'affiner cette identification au vue du peu d'organismes présents dans cette classe. Il est néanmoins possible réaliser une différence entre les annélides adultes et les larves.
+
+La @fig-annelida-adult montre un gros polychète trouvé dans les échantillons de Calvi.
+
+![Vignette d'annélide](images/annelida/annelida.png){#fig-annelida-adult alt="Vignette d'annélide" width="300"}
+
+La @fig-vig-annelida-adult propose des vignettes d'annélides adultes.
+
+```{r}
+#| label: "fig-vig-annelida-adult"
+#| fig-cap: "Vignettes d'annélides"
+plot_vignettes(vigns, group = "annelida_adult")
+```
+
+La @fig-vig-annelida-larva propose des vignettes d'annélides adultes.
+
+```{r}
+#| label: "fig-vig-annelida-larva"
+#| fig-cap: "Vignettes de larves d'annélide"
+plot_vignettes(vigns, group = "annelida_larva")
+```

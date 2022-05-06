@@ -11,11 +11,11 @@ Le phylum des mollusques est sans doute l'embranchement d'invertébrés le plus 
 
 -   Symétrie bilatérale
 
--    La surface ventrale musculeuse est appelée le pied
+-   La surface ventrale musculeuse est appelée le pied
 
 -   La surface dorsale est généralement couverte d'une coquille protégeant la masse viscérale. Cette coquille est sécrétée par le manteau, un revêtement épidermique
 
--    ...
+-   ...
 
 Ce phylum contient différentes classes telles que les Bivalvia, Caudofoveata, Gastropoda, Scaphopoda,... [@horton2022]
 
@@ -45,7 +45,7 @@ La @fig-vig-clava propose des vignettes supplémentaires de *C. clava*.
 
 ```{r}
 #| label: fig-vig-clava
-#| fig-cap: "Vignettes des *C. clava*. "
+#| fig-cap: "Vignettes des *C. clava*."
 plot_vignettes(vigns, group = "creseis_clava", nx = 2 )
 ```
 
