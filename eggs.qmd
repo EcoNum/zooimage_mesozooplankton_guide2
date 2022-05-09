@@ -1,0 +1,99 @@
+# Oeufs
+
+```{r, echo=FALSE}
+source("R/init.R")
+vigns <- fs::dir_ls(
+  here::here(training_dir, "biota/animalia/eggs/"), 
+  type = "file", glob = "*.png", recurse = TRUE)
+```
+
+L'écosystème marin pélagique abrite une très quantité d'organismes différents. Ces organismes, du moins d'un point de vue assez large, sont facilement distinguables de part leurs morphologies. Un grand nombre de ces organismes possèdent un stade sous forme d'œufs qui flottent dans le plancton. Néanmoins la diversité morphologique des individus adultes ne va pas de paire avec la diversité morphologique des œufs. Ces œufs sont d'apparence sphérique avec une zone centrale foncée, le vitellus, qui est la réserve énergétique [@quivythomas2018].
+
+Dans cette classe les différents types d'œufs sont tout de même distingués le plus précisément possible à partir de différentes clés d'identification. Ils sont généralement discriminés les uns des autres par leur forme, taille, type de surface, présence ou absence d'une seconde membrane, le type et la couleur du vitellus et la position et la couleur du globule huileux [@rodriguez2017].
+
+Les informations utilisées pour la caractérisation des œufs proviennent des guide @colton1969, @konishi2008 et @rodriguez2017. Différencier les organismes associés aux œufs est impossible sur base des vignettes, c'est pour cela que l'identification se fera par rapport aux stades d'avancement de l'œuf.
+
+## Œufs de stade 1
+
+Les œufs de stade 1 ne présentent pas de globule huileux ni d'embryons en formation. Le vitellus occupe en moyenne la moitié de l'espace.
+
+![Vignette d'un œuf au stade 1 [@dugauquier2019].](images/eggs/eggs_stade_1.png){#fig-eggs-stade1 width="250"}
+
+La @fig-vig-eggs-stade1 propose des vignettes supplémentaires d'œufs de stade 1*.*
+
+```{r}
+#| label: fig-vig-eggs-stade1
+#| fig-cap: "Vignettes d'oeufs de stade 1."
+plot_vignettes(vigns, group = "eggs_stade_1")
+```
+
+## Œufs de stade 2
+
+Les œufs de stade 2 sont caractérisés par un remaniement du vitellus avec un pôle animal la plupart du temps visible. Le vitellus est décentré et occupe plus d'espace (@fig-eggs-stade2).
+
+![Vignette d'un œuf au stade 2 [@dugauquier2019].](images/eggs/eggs_stade_2.png){#fig-eggs-stade2 width="250"}
+
+La @fig-vig-eggs-stade2 propose des vignettes supplémentaires d'œufs de stade 2*.*
+
+```{r}
+#| label: fig-vig-eggs-stade2
+#| fig-cap: "Vignettes d'oeufs de stade 2."
+plot_vignettes(vigns, group = "eggs_stade_2")
+```
+
+## Œufs de stade 3
+
+Les œufs de stade 3 sont des œufs d'un relativement grand diamètre, en moyenne 3 mm, avec un vitellus sphérique de couleur brun à noir. La petite tache noire à l'extrémité gauche du vitellus est le globule huileux. La surface plus foncée à gauche du vitellus est l'embryon en formation. Il est possible que cette surface soit le blastoderme mais cela est difficile à affirmer avec l'ensemble des vignettes (@fig-eggs-stade3) .
+
+![Vignette (A) et dessin (B, @rodriguez2017) d'un œuf au stade 3.](images/eggs/eggs_stade_3.png){#fig-eggs-stade3 width="250"}
+
+La @fig-vig-eggs-stade3 propose des vignettes supplémentaires d'œufs de stade 3*.*
+
+```{r}
+#| label: fig-vig-eggs-stade3
+#| fig-cap: "Vignettes d'oeufs de stade 3."
+plot_vignettes(vigns, group = "eggs_stade_3")
+
+```
+
+## Œufs au stade 4
+
+Les œufs de stade 4 sont des œufs assez similaires au stade 3 avec néanmoins un rapprochement entre la surface noire et le globule huileux (@fig-eggs-stade4).
+
+![Vignette d'un œuf au stade 4 [@dugauquier2019].](images/eggs/eggs_stade_4.png){#fig-eggs-stade4 width="250"}
+
+La @fig-vig-eggs-stade4 propose des vignettes supplémentaires d'œufs de stade 4*.*
+
+```{r}
+#| label: fig-vig-eggs-stade4
+#| fig-cap: "Vignettes d'oeufs de stade 4."
+plot_vignettes(vigns, group = "eggs_stade_4")
+```
+
+## Œufs au stade 5
+
+Les œufs de stade 5 sont caractérisés par la ligne brune transversale et épaisse qui traverse le vitellus. Cette ligne est probablement un embryon en formation. La tache noire visible est le globule huileux. En raison de la visibilité de l'embryon, ce stade est le dernier (@fig-eggs-stade5).
+
+![Vignette (A) et schéma (B, @rodriguez2017) d'un œuf de stade 5.](images/eggs/eggs_stade_5.png){#fig-eggs-stade5 width="250"}
+
+La @fig-vig-eggs-stade5 propose des vignettes supplémentaires d'œufs de stade 5*.*
+
+```{r}
+#| label: fig-vig-eggs-stade5
+#| fig-cap: "Vignettes d'oeufs de stade 5."
+plot_vignettes(vigns, group = "eggs_stade_5")
+```
+
+## Œufs avec une nauplie
+
+Un groupe d'œufs peut être individualisé. Il s'agit de ceux qui contiennent des nauplies en développement ( @fig-eggs-nauplius).
+
+![Vignette d'un œuf contenant une nauplie.](images/eggs/eggs_nauplius.png){#fig-eggs-nauplius width="250"}
+
+La @fig-vig-eggs-nauplius propose des vignettes supplémentaires d'œufs contenant une nauplie*.*
+
+```{r}
+#| label: fig-vig-eggs-nauplius
+#| fig-cap: "Vignettes d'oeufs de nauplies."
+plot_vignettes(vigns, group = "eggs_nauplius")
+```

@@ -1,0 +1,58 @@
+# Chromista
+
+```{r, echo = FALSE}
+source("R/init.R")
+vigns <- fs::dir_ls(
+  here::here(training_dir, "biota/chromista"), 
+  type = "file", glob = "*.png", recurse = TRUE)
+```
+
+## Dinoflagellate
+
+Les dinoflagellés ou dinophycées sont des organismes faisant partie du groupe des Alveolata. La moitié des dinoflagellés sont photosynthétiques tandis que l'autre moitié sont des organismes hétérotrophes, ils font donc partie du phytoplancton et du zooplancton et sont soit marin, soit dulçaquicole [@taylor2008].
+
+Les *Ceratium ( @fig-ceratium )*, organismes unicellulaires biflagellés, sont facilement identifiables par la morphologie de leur carapace tout à fait caractéristique avec 3 cornes aplaties dorso-ventralement [@oliveira2011]
+
+![Vignette (A) et Image (B, @Hoppenrath2012 ) de Ceratium.](images/chromista/ceratium.png){#fig-ceratium width="250"}
+
+La propose des vignettes supplémentaires de *Ceratium*.
+
+```{r}
+#| label: fig-vig-ceratium
+#| fig-cap: "Vignettes des dinoflagellata."
+plot_vignettes(vigns, group = "dinoflagellata", nx = 5, ny = 5)
+```
+
+## Rhizaria
+
+Le clade Rhizaria est un sous-règne de Chromista dont, à l'instar des cnidaires, la classification est toujours débattue. La classification choisie ici sera celle de la plateforme WORMS, vérifiée à l'aide de la classification de Cavalier-Smith qui est une des plus actuelle sur le sujet [@cavaliersmith2018].
+
+L'infra-règne Rhizaria est composé de trois phylums : Cercozoa, Foraminifera et Radiozoa. @quivythomas2018 a identifié un grand nombre de vignettes d'*Aulacantha scolymantha ( @fig-aulacantha )*. Cet organisme fait partie du phylum des Cercozoa et de l'ordre des Phaeocystida [@horton2022]. C'est un protiste holoplanctonique hétérotrophe d'apparence sphérique et recouvert de tubes radiaux cylindriques faisant de 0,5 à 1 mm de long. L'organisme est constitué au centre d'une capsule contenant l'endoplasme et d'une partie périphérique, le sclaracoma qui est constituée des tubes siliceux squelettiques. Entre ces deux couches se trouve le phaeodium constitué de particules brunes [@quivythomas2018].
+
+![Vignette (A) et Image (B, Haeckel (1862)) d' *Aulacantha scolymantha.*](images/chromista/aulacantha.png){#fig-aulacantha width="250"}
+
+La @fig-vig-aulacantha propose des vignettes supplémentaires d'*Aulacantha scolymantha.*
+
+```{r}
+#| label: fig-vig-aulacantha
+#| fig-cap: "Vignettes d'*Aulacantha scolymantha* ."
+plot_vignettes(vigns, group = "aulocantha_scolymantha")
+```
+
+Pour le reste des vignettes, au vue de l'immense diversité morphologique de ces organismes et de leurs tailles fortement réduite, le parti pris sera de faire deux autres groupes de vignettes, tout d'abord une classe de Rhizaria au sens général. Ensuite, au vue de la nature anatomique de ces organismes, il est courant qu'ils s'agrègent ensemble sur une vignette, une classe sera donc dédiée à ces agrégats, comme ce fût le cas dans l'étude de @fullgrabe2020.
+
+La @fig-vig-rhizaria-nd propose des vignettes de Rhizaria non identifiés.
+
+```{r}
+#| label: fig-vig-rhizaria-nd
+#| fig-cap: "Vignettes de Rhizaria non identifiés."
+plot_vignettes(vigns, group = "rhizaria_nd", nx = 5, ny = 5)
+```
+
+La @fig-vig-rhizaria-accretion propose des vignettes d'agrégats de Rhizaria.
+
+```{r}
+#| label: fig-vig-rhizaria-accretion
+#| fig-cap: "Vignettes de Rhizaria non identifiés."
+plot_vignettes(vigns, group = "rhizaria_accretion", nx = 5, ny = 5)
+```

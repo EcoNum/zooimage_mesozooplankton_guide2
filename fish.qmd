@@ -1,0 +1,72 @@
+# Larve de poissons
+
+```{r, echo=FALSE}
+source("R/init.R")
+vigns <- fs::dir_ls(
+  here::here(training_dir, "biota/animalia/chordata/vertebrata/"), 
+  type = "file", glob = "*.png", recurse = TRUE)
+```
+
+L'ichtyoplancton concerne les œufs et larves de poissons dans la masse planctonique. L'étude de ces organismes est une discipline à part entière et demande des années d'expérience pour réussir à distinguer et identifier les différentes larves de ces poissons dans un ensemble de vignettes. Étudier l'ichtyoplancton est extrêmement important pour comprendre la dynamique des populations de poissons, notamment dans un cadre plus économique en lien avec les industries de pêches. Ces organismes sont des prédateurs extrêmement importants du plancton et réussir à corréler ces organismes au mésozooplancton peut s'avérer crucial pour comprendre la dynamique des populations [@rodriguez2017].
+
+C'est pour cela qu'un premier classement de ces vignettes est réalisé, mais une identification vraiment précise demanderait une étude complète à part entière. Plusieurs clés d'identification ont été utilisées pour distinguer les vignettes \[@bapat1995, @colton1969, @rodriguez2017\].
+
+Au cours de leur développement les poissons vont passer par différents stades ( @fig-fish-cycle ), mais une identification précise de l'organisme ne peut se faire qu'au stade juvénile [@rodriguez2017].
+
+![Cycle de vie d'une larve de poisson, depuis l'oeuf jusqu'au stade juvénile [@rodriguez2017].](images/fish/fish_cycle.png){#fig-fish-cycle width="300"}
+
+La proportion des différentes partie de l'organisme est le paramètre le plus utilisé pour différencier les espèces ( @fig-fish-anatomy ). C'est pour cela que les larves ont été réparties en 5 types en fonction des proportions. Ces 5 types comprendront différentes familles de poissons.
+
+![Morphologie générale d'une larve de poissons. Les différents paramètres utilisées pour la distinction sont présentés sur ce schéma [@rodriguez2017].](images/fish/fish_anatomy.png){#fig-fish-anatomy}
+
+## Larve avec sac vitellin
+
+La première catégorie concerne les larves de poissons dont le sac vitellin est encore visible ( @fig-fish-yolk ). Ce sont les larves les plus facile à différencier du reste.
+
+![Schéma (A, @konishi2008 ) et vignette (B) d'une larve de poisson avec le sac vitellin](images/fish/fish_yolk_sac.png){#fig-fish-yolk width="300"}
+
+Très peu de vignettes ont été trouvé dans les échantillons.
+
+## Larve de type 1
+
+Les larves de poissons de type I comprennent une proportion de tête faisant 1/7 de la longueur totale du corps (@fig-fish-type1)
+
+![Schema (A, @konishi2008) et vignette (B) d'une larve de poisson de type 1 (famille des Clupeidae)](images/fish/fish_type_1.png){#fig-fish-type1 width="300"}
+
+La @fig-vig-pisces-type1 propose des vignettes supplémentaires de *larves de poissons de type 1.*
+
+```{r}
+#| label: fig-vig-pisces-type1
+#| fig-cap: "Vignettes de larves de poissons de type 1."
+plot_vignettes(vigns, group = "pisces_larva_type_I")
+```
+
+## Larve de type II
+
+Les larves de poissons de type 2 possèdent une proportion de tête trois fois moins longue que le reste du corps (@fig-fish-type2)
+
+![Schéma (A, @konishi2008 ) et vignette (B) d'une larve de poisson de type II (famille Monocentridae).](images/fish/fish_type_2.png){#fig-fish-type2 width="300"}
+
+La @fig-vig-pisces-type2 propose des vignettes supplémentaires de *larves de poissons de type 2.*
+
+```{r}
+#| label: fig-vig-pisces-type2
+#| fig-cap: "Vignettes de larves de poissons de type 2."
+plot_vignettes(vigns, group = "pisces_larva_type_II")
+```
+
+## Larva de type III
+
+**Aucune larve de ce type de poisson n'a été identifiée dans les vignettes.**
+
+Les organismes de cette catégorie possèdent une proportion de tête égale à celle du corps (@fig-fish-type3).
+
+![Schéma [@konishi2008] d'une larve de poisson de type III (Famille Diodontidae).](images/fish/fish_type_3.png){#fig-fish-type3}
+
+## Larve de type IV
+
+**Aucune larve de ce type de poisson n'a été identifiée dans les vignettes.**
+
+Les poissons de type 4 possèdent une tête de taille largement réduite par rapport au corps .
+
+![Schéma [@konishi2008] d'une larve de poisson de type IV (famille des Muraenesocidae).](images/fish/fish_type_4.png)

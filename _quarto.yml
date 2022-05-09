@@ -24,8 +24,11 @@ book:
     - cnidaria.qmd
     - chaetognatha.qmd
     - mollusca.qmd
+    - eggs.qmd
+    - fish.qmd
     - annelida.qmd
     - tunicata.qmd
+    - chromista.qmd
     - references.qmd
 
 lang: fr
