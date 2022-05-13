@@ -1,0 +1,216 @@
+# Autres crustacés
+
+```{r, echo=FALSE}
+source("R/init.R")
+vigns <- fs::dir_ls(
+  here::here(training_dir, "biota/animalia/arthropoda/crustacea"), 
+  type = "file", glob = "*.png", recurse = TRUE)
+```
+
+Les crustacés font partie du phylum des Arthropoda, ce sont des organismes soit terrestres, dulcicoles ou marins. L'anatomie générale d'un crustacé est divisée en 3 parties : tête, thorax et abdomen. Cette classe contient plus de 42 000 espèces dont certaines sont planctoniques soit toute leur vie comme le krill soit à un stade du cycle comme les nauplii [@ruppert2004].
+
+A l'instar des cnidaires, la phylogénie des crustacés a été et est encore soumise à de nombreux débats. Une phylogénie retenue est celle se basant sur l'étude de @schwentner2017 , une des plus récentes.
+
+## Nauplii {#sec-nauplii}
+
+Les Nauplii sont les stades larvaires les plus basiques des crustacés à l'exception de la majorité des Malacostraca [@dahms2006]. L'anatomie d'une larve nauplii est divisée en 2 parties [@ruppert2004] :
+
+-   tête : constituée de 3 segments comportant 2 paires d'antennes et les mandibules (utilisées ici pour la locomotion) ainsi que d'un œil nauplien.
+
+-   Région postérieure : constituée des ébauches du céphalon, thorax et abdomen.
+
+Les organismes dont le stade nauplii est important sont : Cephalocarida, Branchiopoda, Ostracoda, Mystacocarida, Copepoda, Cirripedia, Ascothoracida, Rhizocephala, Facetotecta, Euphausiacea et Penaeidea [@dahms2006].
+
+La @fig-vig-nauplius propose une série de vignettes de nauplii.
+
+```{r}
+#| label: fig-vig-nauplius
+#| fig-cap: "Vignettes de nauplies."
+plot_vignettes(vigns, group = "crustacea_nauplius", nx = 5, ny = 5)
+```
+
+Il serait intéressant de pouvoir identifier les différentes nauplii pour affiner la précision du classifieur. Malheureusement, la morphologie de ces larves est extrêmement similaire pour la plupart des taxons et de ce fait l'identification est difficile à établir.
+
+Néanmoins, les nauplii de copépodes (@fig-nauplius-copepoda) et d'euphausiacées (@fig-nauplius-euphausiacea ) sont reconnaissables des autres. Ces deux larves de nauplii peuvent se distinguer par la forme du telson et la proportion entre les 2 paires d'antennes [@dahms2006].
+
+![Vignette (A) et schéma (B, @dahms2006 ) d'une nauplii de copépodes](images/crustacea/nauplius_copepoda.png){#fig-nauplius-copepoda width="250"}
+
+![Vignette (A) et schéma (B, @dahms2006) d'une nauplii d'euphausiacée](images/crustacea/nauplius_euphausiacea.png){#fig-nauplius-euphausiacea width="250"}
+
+La @fig-vig-copepoda-nauplius propose une série de vignettes de nauplii de copépodes.
+
+```{r}
+#| label: fig-vig-copepoda-nauplius
+#| fig-cap: "Vignettes de nauplies de copépodes."
+plot_vignettes(vigns, group = "copepoda_nauplius_larva", nx = 5, ny = 4)
+```
+
+La @fig-vig-euphausiacea-nauplius propose une série de vignettes de nauplii d'euphausiacées.
+
+```{r}
+#| label: fig-vig-euphausiacea-nauplius
+#| fig-cap: "Vignettes de nauplies d'euphausiacées."
+plot_vignettes(vigns, group = "euphausiacea_nauplius", nx = 5, ny = 4)
+```
+
+## Cladocera
+
+Les cladocères sont un super-ordre de Branchiopoda contenant 11 familles différentes [@ruppert2004]. La morphologie de ces organismes est tout à fait caractéristique par la présence d'une grande épine et d'un œil composé bien visible sur les vignettes [@quivythomas2018]. L'épine se trouve sur la carapace, elle-même divisée en deux comme un bivalve [@ruppert2004].
+
+Les Cladocera sont souvent divisés en 4 ordres [@ruppert2004] :
+
+-   Anomopoda : Bosminidae, Chydoridae, Daphniidae, Macrothricidae et Moinidae
+
+-   Ctenopoda : Holopediidae et Sididae
+
+-   Onychopoda : Cercopagidae, Podonidae et Polyphemidae
+
+-   Haplopoda : Leptodoridae
+
+Après analyse des vignettes disponibles lié à l'étude de\[@dugauquier2019 , il s'avère que seul des Onychopoda sont trouvé.
+
+### Onychopoda
+
+::: callout-warning
+## Confusion Anomopoda et Evadne
+
+Les travaux associés [@dugauquier2019] à ce guide font référence au groupe des *Anamopoda* alors qu'il s'agit plus vraisemblablement d'individus du genre *Evadne.* Le genre *Evadne* appartient à l'ordre des Onychopoda*.*
+
+Les anamopoda sont des organismes majoritairement d'eau douce, mais on les retrouve parfois dans des zones côtières avec fort apport d'eau douce.
+:::
+
+La @fig-vig-onychopoda propose une série de vignettes d'Onychopoda.
+
+On retrouve les éléments suivant sur les vignettes
+
+-   un œil composé plus dense
+
+-   une carapace claire
+
+-   des pattes dépassants de la carapace
+
+```{r}
+#| label: fig-vig-onychopoda
+#| fig-cap: "Vignettes d'Onychopoda."
+plot_vignettes(vigns, group = "cladocera", ny = 5, nx=5)
+```
+
+## Malacostraca
+
+La classe des Malacostraca contient plus de la moitié des espèces connues de crustacés, il est donc plus qu'indispensable de s'y attarder. Ils sont reconnaissables par le tronc divisé en 14 segments plus un telson. Les 8 premiers segments forment le thorax et les 6 derniers l'abdomen [@ruppert2004].
+
+Parmi cette classe, les ordres suivant sont analysés : Decapoda, Amphipoda, Isopoda, Euphausiacea et Stomatopoda.
+
+### Decapoda - Zoea
+
+Les Zoea sont, comme les Nauplii, un stade larvaire de crustacés, mais cette fois-ci limité au Malacostraca et plus particulièrement au Decapoda [@ruppert2004]. Les larves de Decapoda sont nommées zoea lorsqu'elles acquièrent les appendices thoraciques utilisés pour la nage de l'organisme (@fig-decapoda). C'est le stade larvaire le plus basique des décapodes sauf pour les Dendrobranchiata dont un stade Nauplii le précède [@haug2016].
+
+Les décapodes se divisent en 2 sous-ordres, Dendrobrachiata et Pleocyemata. Ces 2 sous-ordres se différencient par leurs branchies. Les Dendrobrachiata ont des branchies constituées d'un axe ramifié complexe et les Pleocyemata ont des branchies avec des lamelles simples [@anger2006]. Les larves rencontrées dans les vignettes font toutes partie des Pleocyemata et plus particulièrement des Brachyura et Anomura.
+
+![Cycle de vie des décapodes [@smith2015], Vignette (A,C,E) et images (B, C, D, @hecq2014) de megalopa, anomura, brachyura](images/crustacea/decapoda.png){#fig-decapoda width="300"}
+
+La @fig-vig-brachyura-zoea-larva propose une série de vignettes de Brachyura.
+
+```{r}
+#| label: fig-vig-brachyura-zoea-larva
+#| fig-cap: "Vignettes de Brachyura."
+plot_vignettes(vigns, group = "brachyura_zoea_larva")
+```
+
+La @fig-vig-brachyura-zoea-larva propose une série de vignettes de Anomura.
+
+```{r}
+#| label: fig-vig-anomura-zoea-larva
+#| fig-cap: "Vignettes de Anomura."
+plot_vignettes(vigns, group = "anomura_zoea_larva")
+```
+
+### Decapoda - Megalopa
+
+A l'instar des 2 classes précédentes, les Megalopa sont un stade larvaire qui, comme les Zoea, se trouve chez les Decapoda. Il s'agit d'un stade plus avancé des Anomura et Brachyura [@smith2015]. Ce stade se caractérise par des appendices plus fonctionnels, les pléopodes [@taylor2008]. A ce stade il n'est malheureusement pas possible de différencier les Anomura et les Brachyura (@fig-decapoda).
+
+La @fig-vig-decapoda-megalopa-larva propose une série de vignettes de Megalopa.
+
+```{r}
+#| label: fig-vig-decapoda-megalopa-larva
+#| fig-cap: "Vignettes de Megalopa."
+plot_vignettes(vigns, group = "decapoda_megalopa_larva", nx = 4, ny = 4)
+```
+
+## Stomatopoda
+
+Cet ordre fait partie des Malacostraca et est constitué de plus de 300 espèces. Les Stomatopoda sont connus principalement car ils contiennent les crevettes mantes, prédatrices de poissons, mollusques et autres crustacés [@ruppert2004]. Dans le cadre de ce guide, ce sont les larves de stomatopodes qui sont analysées. Déjà au stade larvaire, les stomatopodes sont des prédateurs de crustacés très important et contrairement à beaucoup d'autres malacostracés larvaires, ils sont déjà planctoniques [@haug2018].
+
+Chez les Stomatopoda il y a 4 types de stades larvaires identifiables par leurs morphologie \[\@Haug2016\].
+
+Deux stades primaires :
+
+\- Antizoea
+
+\- Pseudozoea
+
+Deux stades secondaires, se distinguant par le nombre de denticules sur le telson :
+
+\- Erichthus : maximum 3 denticules sur le telson
+
+\- Alima : minimum 4 denticules sur le telson
+
+La @fig-vig-stomatopoda propose une série de vignettes de Stomatopoda. Différents stades sont présents dans ces vignettes.
+
+```{r}
+#| label: fig-vig-stomatopoda
+#| fig-cap: "Vignettes de Stomatopoda."
+plot_vignettes(vigns, group = "stomatopoda", nx = 4, ny = 4)
+```
+
+L'étude de @haug2016 révèle également quelques nouveaux stades larvaires (balloon-larva, spiny-balloon, flying-saucer, gnome-hat) mais ils restent encore assez hypothétiques. Une étude plus récente révèle également un stade larvaire dit « extrême » et un autre dit *spiked helmet* [@haug2018]. Pour cette étude seuls les 4 stades classiques sont donc pris en compte, sur ces 4 stades, le stade Erichthus n'a pas été identifié dans les vignettes.
+
+### Antizoea
+
+Les yeux ne sont pas encore fonctionnels, les antennules uniflagellées et les pattes thoraciques biramées. Le stade antizoea donnera une larve erichthus [@fig-antizoea].
+
+![Vignette (A) et Images (B, @haug2016) du stade antizoea.](images/crustacea/antizoea.png){#fig-antizoea width="250"}
+
+### Pseudozoea 
+
+Les yeux sont fonctionnels, les antennules biflagellées. Le stade pseudozoea donnera une larve erichthus ou alima (@fig-pseudozoea).
+
+![Vignette (A) et Image (B, @haug2016 ) du stade pseudozoea.](images/crustacea/pseudozoea.png){#fig-pseudozoea width="250"}
+
+### Alima 
+
+![Vignette (A) et Image (B, @haug2016) du stade Alima.](images/crustacea/alima.png){#fig-alima width="250"}
+
+## Euphausiacea
+
+Cet ordre fait également partie des Malacostraca et les organismes qui le composent font partie de ce que l'on appelle communément le krill. Ce sont des crustacés pélagiques de maximum 3 cm qui sont parfois considérés comme étant des décapodes primitifs [@ruppert2004\]. Ces organismes ont un cycle de vie divisé en plusieurs stades et seuls ceux allant du calyptopis à l'adulte sont considérés dans cette classe, les précédents étant inclus dans les nauplii représenté sur la @fig-euphausiacea . Le cycle de vie dure généralement 2 à 3 mois et les œufs sont lâchés au printemps \[@guglielmo2015]
+
+![Cycle de vie des euphausiacée : vignette (A) et image (B, @hecq2014 ) du stade Furcilla , vignette (C) et image (D, @guglielmo2015 ) du stage Calyptopis.](images/crustacea/euphausiacea.png){#fig-euphausiacea}
+
+Les vignettes d'euphausiacea sont classées en fonction des 3 stades suivants : nauplii (@sec-nauplii), calyptopis et le groupe furcilia-adulte.
+
+Distinguer plus précisément les différents euphausiacés est extrêmement compliqué, en effet plusieurs études ont démontré que la morphologie est fort variable pour les stades larvaires au sein d'une même espèce. Certains facteurs environnementaux semblent affecter de manière importante la morphologie des individus larvaires au sein même d'une même espèce, on cite notamment la température, la salinité, la disponibilité en nourriture,... [@leroux1973].
+
+### Calyptopis
+
+Il y a communément 3 stades de calyptopis au cours desquels l'abdomen se segmentera pour arriver à 6 segments se terminant par le telson. Les yeux se développent également mais sont toujours recouverts par une carapace [@guglielmo2015].
+
+La @fig-vig-euphausiacea-calyptopis propose une série de vignettes de calyptopis.
+
+```{r}
+#| label: fig-vig-euphausiacea-calyptopis
+#| fig-cap: "Vignettes de calyptopis."
+plot_vignettes(vigns, group = "euphausiacea_calyptopis_larva", nx = 4, ny = 4)
+```
+
+### Furcilia 
+
+Ce stade suit les calyptopis. Ce sont des adultes miniatures. Les yeux sortent de la carapace. Au cours des stades furcilia, les pléopodes vont se développer. Il est souvent difficile de distinguer les furcilia avancées et les adultes de part la grande variabilité morphologique des individus. Ils sont donc tous rassemblés dans la même classe.
+
+La @fig-vig-euphausiacea-furcilia propose une série de vignettes de furcilia.
+
+```{r}
+#| label: fig-vig-euphausiacea-furcilia
+#| fig-cap: "Vignettes de furcilia."
+plot_vignettes(vigns, group = "euphausiacea_furcilia_larva", nx = 4, ny = 4)
+```

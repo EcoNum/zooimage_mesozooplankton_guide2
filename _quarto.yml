@@ -22,6 +22,7 @@ book:
   chapters:
     - index.qmd
     - cnidaria.qmd
+    - crustacea.qmd
     - chaetognatha.qmd
     - mollusca.qmd
     - eggs.qmd
