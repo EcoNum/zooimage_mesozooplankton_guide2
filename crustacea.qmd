@@ -67,7 +67,7 @@ Les Cladocera sont souvent divisés en 4 ordres [@ruppert2004] :
 
 -   Haplopoda : Leptodoridae
 
-Après analyse des vignettes disponibles lié à l'étude de\[@dugauquier2019 , il s'avère que seul des Onychopoda sont trouvé.
+Après analyse des vignettes disponibles lié à l'étude de @dugauquier2019 , il s'avère que seul des Onychopoda sont trouvé.
 
 ### Onychopoda
 
@@ -171,19 +171,19 @@ Les yeux ne sont pas encore fonctionnels, les antennules uniflagellées et les p
 
 ![Vignette (A) et Images (B, @haug2016) du stade antizoea.](images/crustacea/antizoea.png){#fig-antizoea width="250"}
 
-### Pseudozoea 
+### Pseudozoea
 
 Les yeux sont fonctionnels, les antennules biflagellées. Le stade pseudozoea donnera une larve erichthus ou alima (@fig-pseudozoea).
 
 ![Vignette (A) et Image (B, @haug2016 ) du stade pseudozoea.](images/crustacea/pseudozoea.png){#fig-pseudozoea width="250"}
 
-### Alima 
+### Alima
 
 ![Vignette (A) et Image (B, @haug2016) du stade Alima.](images/crustacea/alima.png){#fig-alima width="250"}
 
 ## Euphausiacea
 
-Cet ordre fait également partie des Malacostraca et les organismes qui le composent font partie de ce que l'on appelle communément le krill. Ce sont des crustacés pélagiques de maximum 3 cm qui sont parfois considérés comme étant des décapodes primitifs [@ruppert2004\]. Ces organismes ont un cycle de vie divisé en plusieurs stades et seuls ceux allant du calyptopis à l'adulte sont considérés dans cette classe, les précédents étant inclus dans les nauplii représenté sur la @fig-euphausiacea . Le cycle de vie dure généralement 2 à 3 mois et les œufs sont lâchés au printemps \[@guglielmo2015]
+Cet ordre fait également partie des Malacostraca et les organismes qui le composent font partie de ce que l'on appelle communément le krill. Ce sont des crustacés pélagiques de maximum 3 cm qui sont parfois considérés comme étant des décapodes primitifs [@ruppert2004]. Ces organismes ont un cycle de vie divisé en plusieurs stades et seuls ceux allant du calyptopis à l'adulte sont considérés dans cette classe, les précédents étant inclus dans les nauplii représenté sur la @fig-euphausiacea . Le cycle de vie dure généralement 2 à 3 mois et les œufs sont lâchés au printemps [@guglielmo2015]
 
 ![Cycle de vie des euphausiacée : vignette (A) et image (B, @hecq2014 ) du stade Furcilla , vignette (C) et image (D, @guglielmo2015 ) du stage Calyptopis.](images/crustacea/euphausiacea.png){#fig-euphausiacea}
 
@@ -203,7 +203,7 @@ La @fig-vig-euphausiacea-calyptopis propose une série de vignettes de calyptopi
 plot_vignettes(vigns, group = "euphausiacea_calyptopis_larva", nx = 4, ny = 4)
 ```
 
-### Furcilia 
+### Furcilia
 
 Ce stade suit les calyptopis. Ce sont des adultes miniatures. Les yeux sortent de la carapace. Au cours des stades furcilia, les pléopodes vont se développer. Il est souvent difficile de distinguer les furcilia avancées et les adultes de part la grande variabilité morphologique des individus. Ils sont donc tous rassemblés dans la même classe.
 
@@ -213,4 +213,88 @@ La @fig-vig-euphausiacea-furcilia propose une série de vignettes de furcilia.
 #| label: fig-vig-euphausiacea-furcilia
 #| fig-cap: "Vignettes de furcilia."
 plot_vignettes(vigns, group = "euphausiacea_furcilia_larva", nx = 4, ny = 4)
+```
+
+## Amphipoda
+
+Les amphipodes sont un ordre de Malacostraca constitué de plus de 6000 espèces. C'est un taxon très diversifié (terrestre, marin et dulciquole) mais également très primitif. Ils ont des rôles extrêmement importants dans beaucoup d'écosystèmes [@ruppert2004]. Par exemple, les gammares sont notamment très connus comme bioindicateurs de polluants [@macneil2007].
+
+Quatres familles du sous-ordre des Hyperiidea sont distinguables parmi les vignettes selon les critères d'identifications de @hecq2014 :
+
+-   Oxycephalidae
+
+-   Phronimidae
+
+-   Platyscelidae
+
+-   Vibiliidae
+
+### Oxycephalidae
+
+Les Oxyphalidae ressemblent fortement aux Vibiliidae mais la tête est dirigée vers l'intérieur du corps (@fig-oxycephalidae) .
+
+![Vignette (A) et image (B, @hecq2014) d'Oxycephalidae](images/crustacea/oxycephalidae.png){#fig-oxycephalidae width="250"}
+
+La @fig-vig-oxycephalidae propose une série de vignettes d'Oxycephalidae.
+
+```{r}
+#| label: fig-vig-oxycephalidae
+#| fig-cap: "Vignettes d'Oxycephalidae."
+plot_vignettes(vigns, group = "oxycephalidae", nx = 4, ny = 4)
+```
+
+### Phronimidae
+
+Les Phronimidae possèdent de grands peréiopodes ainsi qu'une tête conique dirigée vers le bas @fig-phronimidae .
+
+![Vignette (A) et image (B, @hecq2014) de Phronimidae.](images/crustacea/phronimidae.png){#fig-phronimidae width="250"}
+
+La @fig-vig-phronimidae propose une série de vignettes de Phronimidae.
+
+```{r}
+#| label: fig-vig-phronimidae
+#| fig-cap: "Vignettes de Phronimidae."
+plot_vignettes(vigns, group = "phronimidae", nx = 2, ny = 2)
+```
+
+### Platyscelidae
+
+Les Platyscelidae sont facilement reconnaissable par la forme des yeux globuleux (@fig-platyscelidae).
+
+![Vignette (A) et image (B, @hecq2014) de Platyscelidae.](images/crustacea/platyscelidae.png){#fig-platyscelidae width="250"}
+
+La @fig-vig-platyscelidae propose une série de vignettes de Platyscelidae.
+
+```{r}
+#| label: fig-vig-platyscelidae
+#| fig-cap: "Vignettes de Platyscelidae."
+plot_vignettes(vigns, group = "platyscelidae", nx = 2, ny = 2)
+```
+
+### Vibiliidae
+
+Les Vibiliidae possèdent des antennes droites et une tête petite et dégagées du corps (@fig-vibiliidae).
+
+![Vignette (A) et image (B, @hecq2014) de Vibiliidae](images/crustacea/vibiliidae.png){#fig-vibiliidae width="250"}
+
+La @fig-vig-vibiliidae propose une série de vignettes de Vibiliidae.
+
+```{r}
+#| label: fig-vig-vibiliidae
+#| fig-cap: "Vignettes de Vibiliidae."
+plot_vignettes(vigns, group = "vibiliidae", nx = 2, ny = 2)
+```
+
+## Isopoda
+
+Tout comme les amphipodes, les isopodes sont un ordre de Malacostraca très diversifié d'un point de vue habitat, ils sont tout aussi bien terrestres qu'aquatiques (@fig-isopoda). Ce sont des organismes très importants dans les habitats benthiques. Cet ordre contient également un grand nombre d'espèces parasites et ce sont les seuls crustacés dont le cycle de vie peut être indépendant du milieu aquatique [@ruppert2004].
+
+![Vignette (A) et image (B, @hecq2014) d'Isopoda](images/crustacea/isopoda.png){#fig-isopoda width="250"}
+
+La @fig-vig-isopoda propose une série de vignettes d'Isopoda.
+
+```{r}
+#| label: fig-vig-isopoda
+#| fig-cap: "Vignettes d'Isopoda."
+plot_vignettes(vigns, group = "isopoda", nx = 2, ny = 2)
 ```

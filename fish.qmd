@@ -9,7 +9,7 @@ vigns <- fs::dir_ls(
 
 L'ichtyoplancton concerne les œufs et larves de poissons dans la masse planctonique. L'étude de ces organismes est une discipline à part entière et demande des années d'expérience pour réussir à distinguer et identifier les différentes larves de ces poissons dans un ensemble de vignettes. Étudier l'ichtyoplancton est extrêmement important pour comprendre la dynamique des populations de poissons, notamment dans un cadre plus économique en lien avec les industries de pêches. Ces organismes sont des prédateurs extrêmement importants du plancton et réussir à corréler ces organismes au mésozooplancton peut s'avérer crucial pour comprendre la dynamique des populations [@rodriguez2017].
 
-C'est pour cela qu'un premier classement de ces vignettes est réalisé, mais une identification vraiment précise demanderait une étude complète à part entière. Plusieurs clés d'identification ont été utilisées pour distinguer les vignettes \[@bapat1995, @colton1969, @rodriguez2017\].
+C'est pour cela qu'un premier classement de ces vignettes est réalisé, mais une identification vraiment précise demanderait une étude complète à part entière. Plusieurs clés d'identification ont été utilisées pour distinguer les vignettes [@bapat1995, @colton1969, @rodriguez2017].
 
 Au cours de leur développement les poissons vont passer par différents stades ( @fig-fish-cycle ), mais une identification précise de l'organisme ne peut se faire qu'au stade juvénile [@rodriguez2017].
 

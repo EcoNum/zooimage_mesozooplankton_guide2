@@ -92,7 +92,7 @@ Il est très difficile d'établir une phylogénie correcte des Hydrozoa tant ce 
 
 ### Trachylinae
 
-Les Trachylinae sont une sous-classe d'Hydrozoa comportant les Limnomedusae et les Narcomedusae [@kayal2018] . Ces organismes se distinguent par \[@ruppert2004\] :
+Les Trachylinae sont une sous-classe d'Hydrozoa comportant les Limnomedusae et les Narcomedusae [@kayal2018] . Ces organismes se distinguent par [@ruppert2004] :
 
 -   des statolithes endodermiques
 
@@ -153,7 +153,7 @@ Au vu des organismes étudiés, l'identification peut poser problème. Tout d'ab
 
 ##### Calycophorae
 
-Ce sous-ordre est le plus étudié et décrit des siphonophores, ces organismes ne possèdent pas de pneumatophores, ils ont également un nombre réduit de nectophores \[@pugh2018\]. Selon l'étude de @pugh2018 ce sous ordre est divisé en deux groupes, contenant l'ensemble des familles, le groupe des priomorphes (nectophores arrondis) et le groupe des diphyomorphes (nectophores triangulaires) ( @tbl-calycophorae )
+Ce sous-ordre est le plus étudié et décrit des siphonophores, ces organismes ne possèdent pas de pneumatophores, ils ont également un nombre réduit de nectophores [@pugh2018]. Selon l'étude de @pugh2018 ce sous ordre est divisé en deux groupes, contenant l'ensemble des familles, le groupe des priomorphes (nectophores arrondis) et le groupe des diphyomorphes (nectophores triangulaires) ( @tbl-calycophorae )
 
 ```{r}
 #| label: tbl-calycophorae
