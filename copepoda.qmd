@@ -1,0 +1,223 @@
+# Copepoda
+
+```{r, echo=FALSE}
+source("R/init.R")
+vigns <- fs::dir_ls(
+  here::here(training_dir, "biota/animalia/arthropoda/crustacea/"), 
+  type = "file", glob = "*.png", recurse = TRUE)
+```
+
+Réaliser une étude sur l'abondance en plancton sans analyser les copépodes n'aurait aucun sens. En effet, ces organismes sont les êtres pluricellulaires les plus abondants et représentent jusqu'à 80% de la biomasse zooplanctonique [@gasparini2008]. C'est pour cela que l'explication les concernant est séparée des autres crustacés dont ils font partie.
+
+L'anatomie des copépodes a été largement décrite, ce qui permet une bonne identification sur base de celle-ci. La @fig-copepoda propose une la morphologie d'un copépode sur base d'une femelle gymnoplean. Classiquement, un copépode est divisé en un céphalosome (tête), un métasome (thorax) et d'un urosome (abdomen). A l'extrémité du céphalosome se trouvent les antennules (généralement longues) et les antennes (plus courtes) qui jouent des rôles sensoriels, locomoteurs et/ou préhenseurs. Viennent ensuite les mandibules, maxillules, maxilles et maxillipèdes servant à la prise de nourritures. Le métasome est divisé en plusieurs segments, portant chacun une paire de pattes dont la dernière est généralement un organe copulatoire. Ces organismes portent des soies ayant un rôle sensoriel mais également dans la locomotion sur les antennules [@conway2012; @ruppert2004].
+
+![Morphologie générale d'un copépode [@conway2012].](images/copepoda/copepoda_anatomy.png){#fig-copepoda width="500"}
+
+Dans les études précédentes dont @quivythomas2018, seuls 3 ordres (basés sur l'ancienne taxonomie) de copépodes ont été analysés et repris dans le set d'apprentissage car ceux-ci étaient les plus abondants dans les sites d'échantillonnages. Dans le cadre de ce guide et de l'étude de @dugauquier2019 , c'est la classification la plus actuelle des copépodes qui est employée [@khodami2017]. Cette phylogénie a été établie a partir de 210 espèces de copépodes et basée sur une analyse de l'ARNr 18S et 28S par maximum Likelihood.
+
+::: callout-warning
+L'article utilisé afin de déterminer la classification la plus aboutie proposé par @khodami2017 a été revue suite à plusieurs erreurs proposé par @khodami2020
+:::
+
+![Phylogénie des copépodes utilisées [@khodami2017].](images/copepoda/copepoda_phylogeny.png){#fig-copepoda-phylogeny width="500"}
+
+Les copépodes sont une sous-classe de crustacé, composées de 8 ordres différents répartis dans 2 infra-classes, les neocopepoda et les progymnoplea ( @fig-copepoda-phylogeny ). La différence majeure entre la phylogénie actuelle et celle utilisée pour les guides précédents réside dans la position des Cyclopoida et Poecilostomatoida qui sont maintenant rassemblés. La distinction Podoplea/Gymnoplea est établie depuis bien longtemps et se base principalement sur des différences morphologiques, corrélées par des mesures génomiques [@horton2022].
+
+Les copépodes sont des organismes extrêmement variés en terme de morphologie. Distinguer la taxonomie de ces animaux par phénétique est donc difficile et demande beaucoup d'entrainement mais avec différentes études [@conway2012 ; @dahms2006 ; @brancelj2009 ; @wooton2017] préalables il est possible de ressortir les caractéristiques principales des ordre de copépodes ( @tbl-copepoda )
+
+```{r, echo=FALSE}
+#| label: tbl-copepoda
+#| tbl-cap: "Répartition des 7 familles de Calycophorae en deux groupes. Il est a noter que les tottonophyidae se trouvent dans les 2 groupes car ils combinent l’ensemble des caractéristiques."
+knitr::kable(tibble::tibble(
+  "Ordre " = c(
+    "Calanoida + Platycopioida","Misophrioida","Harpacticoida","Gelyelloida",
+    "Mormonilloida","Monstrilloida","Siphonostomatoida","Cyclopoida"),
+  "Antennules" = c(
+    "Plus grandes que le céphalosome","Courtes et parfois coudées à la moitié","Courtes et épaisses","Courtes, épaisses et rapprochées à la base",
+    "Très longues et ramifiées","Portant plusieurs soies","Courtes et perpendiculaires au prosome",
+    " "), 
+  "Cephalosome" = c("5e paire de patte biramée","Arrondis","Allongé et fusiforme","Allongé et fusiforme, plus épais à la tête","Allongé","Très long et uniforme","Court et en forme d’obus","Plus large que l’urosome et la 5e paire de patte uniramée"), 
+  "Urosome" = c(
+    "Plus petit que le prosome et dépourvu d’appendice",
+    "Relativement court et épaissit au 2e segment","Biramé",
+    "Court et biramé","Biramé, long et très ramifié",
+    "Portant plusieurs ramifications","Un peu plus court que le prosome"," "),
+  "Divers" = c(" ", " ","Corps à l’apparence vermiforme", " "," "," ",
+    "L’apparence générale de l’organisme rappelle un triops",
+    "Antennes courtes et parfois biramées")
+  ))
+```
+
+## Gymnoplea : Platycopioida + Calanoida
+
+Progymnoplea est une infra-classe de Maxillipoda composée d'un seul ordre, celui des Platycopioida [@suárez-morales2015].
+
+Cet ordre comprend une seule famille dont toutes les espèces décrites jusqu'à présent ont été trouvées entre 0 et 120 m de profondeur dans différentes parties du monde (mer du Nord, Amérique du Nord, Bahamas, Bermudes, Japon,...) [@arbizu1997]. Ces organismes sont souvent placés proche des Calanoida de part leur grande promiscuité morphologique. La séparation prosome et urosome, critère souvent utilisé en taxonomie des copépodes est en effet la même \[[@mauchline1998]. Il est de ce fait extrêmement difficile, sans analyse génomique, de différencier ces 2 ordres, longtemps classés sous un seul et même terme, les Gymnoplea (utilisé actuellement uniquement pour les Calanoida). Par soucis de clarté et de précision, les Platycopioida et les Calanoida seront donc considérés ensemble, comme faisant partie du même groupe, celui des Gymnoplea [@wooton2017]. L'ordre des Calanoida est le plus riche des deux en terme de nombre d'espèce [@quivythomas2018]. Ils se distinguent par un type de nage lente et circulaire en temps normal ainsi que par un corps long et effilé. Les individus de cet ordre sont majoritairement planctoniques [@perbicheneves2015]
+
+Différencier 45 familles uniquement sur base de vignettes n'est pas possible sans un œil expert. Néanmoins, plusieurs études se sont occupées de classer ces familles dans différentes super-familles. Il est possible en compilant toutes ces études de simplifier grandement cette taxonomie [@blancobercial2011; @bradfordgrieve2010; @khodami2017].
+
+Ce sont ces super-familles qui sont utilisées pour la création de ce set d'apprentissage.
+
+-   Augaptiloidea ou Arietelloidea : Arietellidae, Augaptilidae, Discoidae, Heterorhabdidae, Hyperbionycidae, Lucicutiidae, Metridinidae et Nulosetigeridae
+
+-   Centropagoidea ou Diaptomoidea : Acartiidae, Candaciidae, Centropagidae, Diaptomidae, Parapontellidae, Pontellidae, Pseudodiaptomidae, Sulcanidae, Temoridae et Tortanidae
+
+-   Bathypontioidea : Bathypontiidae et Fosshageniidae
+
+-   Clausocalanoidea : Aetideidae, Clausocalanidae, Diaxidae, Euchaetidae, Mesaiokeratidae, Parkiidae, Phaennidae, Pseudocyclopiidae, Rostrocalanidae, Scolecitrichidae, Stephidae et Tharibidae
+
+-   Ryocalanoidea : Ryocalanidae
+
+-   Eucalanoidea : Eucalanidae, Rhincalanidae et Subeucalanidae
+
+-   Megacalanoidea ou Calanoidea : alanidae, Megacalanidae et Paracalanidae
+
+-   Pseudocyclopoidea : Pseudocyclopidae
+
+-   Epacteriscoidea : Epacteriscidae
+
+-   Spinocalanoidea : Arctokonstantinidae et Spinocalanidae
+
+Dans cette étude les super-familles suivantes ont été déterminées :
+
+-   Augaptiloidea/Arietelloidea ( @fig-augaptiloidea )
+
+![Vignette (A) et image (B, @hecq2014) Augaptiloidea/Arietelloidea.](images/copepoda/augaptiloidea.png){#fig-augaptiloidea width="250"}
+
+-   Centropagoidea/Diaptomoidea (@fig-centropagoidea)
+
+![Vignette (A) et image (B, @hecq2014) de Centropagoidea/Diaptomoidea.](images/copepoda/centropagoidea.png){#fig-centropagoidea width="250"}
+
+La @fig-vig-centropagoidea propose des vignettes supplémentaires.
+
+```{r}
+#| label: fig-vig-centropagoidea
+#| fig-cap: "Vignettes des Centropagoidea/Diaptomoidea."
+plot_vignettes(vigns, group = "centropagoidea_diaptomoidea")
+```
+
+-   Eucalanoidea (@fig-eucalanoidea)
+
+![Vignette (A) et image (B, @hecq2014) d'Eucalanoidea.](images/copepoda/eucalanoidea.png){#fig-eucalanoidea width="250"}
+
+La @fig-vig-eucalanoidea propose des vignettes supplémentaires.
+
+```{r}
+#| label: fig-vig-eucalanoidea
+#| fig-cap: "Vignettes des Eucalanoidea."
+plot_vignettes(vigns, group = "eucalanoidea")
+```
+
+-   Calanoidea/Megacalanoidea (@fig-calanoidea)
+
+![Vignettte (A) et image (B, @hecq2014) de Calanoidea/Megacalanoidea.](images/copepoda/calanoidea.png){#fig-calanoidea width="250"}
+
+La @fig-vig-calanoidea propose des vignettes supplémentaires.
+
+```{r}
+#| label: fig-vig-calanoidea
+#| fig-cap: "Vignettes des Calanoidea/Megacalanoidea."
+plot_vignettes(vigns, group = "calanoidea_megacalanoidea")
+```
+
+-   Clausocalanoidea (@fig-clausocalanoidea)
+
+![Vignette (A) et image (B, @hecq2014) de Clausocalanoidea.](images/copepoda/clausocalanoidea.png){#fig-clausocalanoidea width="250"}
+
+La @fig-vig-clausocalanoidea propose des vignettes supplémentaires.
+
+```{r}
+#| label: fig-vig-clausocalanoidea
+#| fig-cap: "Vignettes des Clausocalanoidea."
+plot_vignettes(vigns, group = "clausocalanoidea")
+```
+
+## Podoplea
+
+Les Podoplea sont un super-ordre de copépodes, composés de 7 ordres distincts.
+
+-   Misophrioida
+
+-   Harpacticoida
+
+-   Gelyelloida
+
+-   Cyclopoida
+
+-   Mormonilloida
+
+-   Monstrilloida
+
+-   Siphonostomatoida
+
+Parmi ces 7 ordres, seuls 3 ont été identifiés dans les vignettes : Harpacticoida, Cyclopoida et Monstrilloida. La difficulté réside dans l'affinage de ces 3 ordres pour aller plus loin dans la taxonomie. Les Monstrilloida et Harpacticoida sont très peu présents et le nombre de vignettes ne permet donc pas d'aller plus loin, ce qui n'est pas le cas pour les cyclopoida.
+
+### Monstrilloida
+
+Les Monstrilloida est un ordre assez peu connu de copépode. Il contient une seule famille, celle des Monstrillidae, avec 13 genres. Les larves de ces organismes sont parfois parasites d'annelides et de mollusques [@conway2012; @bernot2022].
+
+![Vignette (A) et image (B, @hecq2014) de Monstrilloida.](images/copepoda/monstrilloida.png){#fig-monstrilloida width="250"}
+
+### Harpacticoida
+
+Cet ordre de copépode contient 78 familles et approximativement 3000 espèces ( @fig-harpacticoida ). Certaines de ces familles sont marines, d'autres d'eau douce. Ils sont très importants dans le milieu benthique [@brancelj2009; @bernot2022].
+
+![Vignette (A) et image (B, @hecq2014) d'Harpacticoida.](images/copepoda/harpacticoida.png){#fig-harpacticoida width="250"}
+
+La @fig-vig-harpacticoida propose des vignettes supplémentaires.
+
+```{r}
+#| label: fig-vig-harpacticoida
+#| fig-cap: "Vignettes d'Harpacticoida."
+plot_vignettes(vigns, group = "harpacticoida")
+```
+
+### Cyclopoida
+
+La classification des Cyclopoida a récemment été modifiée et remise au gout du jour. Dorénavant les Poecilostomatoida (ancien ordre) sont considérés comme un sous-ordre des Cyclopoida [@khodami2017]. Ce changement de classification est une énorme différence avec les classifications avec les études précédentes dont @quivythomas2018. Il y a 29 familles de Cyclopoida ne faisant pas partie du sous-ordre des Poecilostomatoida. Ces différentes familles sont rassemblées dans différentes catégories en fonction de la littérature car discriminer chaque famille est impossible sans un expert et il est donc nécessaire d'établir une classification plus large.
+
+#### Poecilostomatoida
+
+Ce sous-ordre de Cyclopoida contient plus de 60 familles, il rassemble des organismes de morphologies très variées ayant pour caractéristique commune le fait que les antennules soient plus courtes que le céphalosome [@quivythomas2018].
+
+Le nombre de famille étant extrêmement important, il est nécessaire d'établir une classification plus large. Différentes catégories sont donc établies en se basant sur la littérature existante [@humes1996; @kim2003;@ho2006]. Ces catégories contiennent la super-famille des Lichomolgoida et la super-famille des Bomolochoidea. Ensuite 3 super-familles déterminées par des analyses phylogénétiques mais pas encore nommées. Et enfin la dernière catégorie qui rassemble toutes les familles dont la position phylogénétique est soit inconnue soit non-étudiée.
+
+-   Catégorie 1 - *super-famille des Lichomolgoida* : Anchimolgidae, Anthessiidae, Kelleriidae, Lichomolgidae, Macrochironidae, Myicolidae, Octopicolodae, Pseudanthessiidae, Rhynchomolgidae, Sabelliphilidae, Sapphirinidae, Spiophanicolidae, Splanchnotrophidae, Synapticolidae, Thamnomolgidae, Urocopiidae
+
+-   Catégorie 2 - *super-famille des Bomolochoidea* : Anomoclausiidae, Bomolochidae, Chondracanthidae, Clausiidae, Corycaeidae, Entobiidae, Intramolgidae, Makrostrotidae, Nereicolidae, Paralubbockiidae, Philoblennidae, Polyankyliidae
+
+-   Catégorie 3 - *super-famille unknow 1* : Philichthyidae, Vahiniidae
+
+-   Catégorie 4 - *super-famille unknow 2* : Clausidiidae, Erebonasteridae, Lubbockiidae, Oncaeidae
+
+-   Catégorie 5 - *super-famille unknow 3* : Antheacheridae, Corallovexiidae, Eunicicolidae, Herpyllobiidae, Lamippidae, Leaniricolidae, Mesoglicolidae, Phyllodicolidae, Pionodesmotidae, Saccopsidae, Shiinoidae, Ventriculinidae, Xenocoelomatidae
+
+-   Catégorie 6 - *sans super-famille* : Abrsiidae, Bradophilidae, Catiniidae, Echiurophilidae, Ergasilidae, Gadilicolidae, Gastrodelphyidae, Iveidae, Jasmineiricolidae, Mytilicolidae, Praxillinicolidae, Serpulidicolidae, Strepidae
+
+Sur ces 6 catégories, seules 3 se sont retrouvées dans le jeu de données :
+
+-   Lichomolgoida (@fig-lichomolgoida)
+
+![Vignette (A) et image (B, @hecq2014) de Lichomolgoida.](images/copepoda/lichomolgoida.png){#fig-lichomolgoida width="250"}
+
+-   Bomolochoidea (@fig-bomolochoidea)
+
+![Vignette (A) et image (B, ...) de Bomolochoidea.](images/copepoda/bomolochoidea.png){#fig-bomolochoidea width="250"}
+
+-   Organismes de Super-famille-unknow-2 ( @fig-super-fam-unknown-2)
+
+![Vignette (A) et image (B, @hecq2014) d'organismes de super-famille-unknow-2](images/copepoda/sup_fam_unknow_2.png){#fig-super-fam-unknown-2 width="250"}
+
+#### Oithonidae
+
+Il est extrêmement difficile de réaliser une classification entre Cyclopoida et les familles que cet ordre contient (hors sous-ordre Poecilostomatoida). Tout d'abord car la morphologie de l'ensemble de ces organismes est très proche mais en plus car la littérature est assez pauvre. Il ressort néanmoins, et ces observations avaient été réalisées également par [@fullgrabe2020], que la famille des Oithonidae est prépondérante et représente la totalité des Cyclopoida (hors Poecilostomatoida) sur les vignettes ( @fig-oithonidae ).
+
+![Vignette (A) et image (B, @bernot2022 ) d'Oithonidae.](images/copepoda/oithonidae.png){#fig-oithonidae width="250"}
+
+La @fig-vig-oithonidae propose des vignettes supplémentaires.
+
+```{r}
+#| label: fig-vig-oithonidae
+#| fig-cap: "Vignettes d'Oithonidae."
+plot_vignettes(vigns, group = "oithonidae")
+```
